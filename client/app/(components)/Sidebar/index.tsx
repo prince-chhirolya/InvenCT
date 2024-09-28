@@ -82,8 +82,8 @@ const Sidebar = () => {
         }`}
       >
         <Image
-          src=""
-          alt="Inven-logo"
+          src="/assets/logo.png"
+          alt="invenct-logo"
           width={27}
           height={27}
           className="rounded w-8"
@@ -105,7 +105,6 @@ const Sidebar = () => {
       </div>
 
       {/* LINKS */}
-      
       <div className="flex-grow mt-8">
         <SidebarLink
           href="/dashboard"
@@ -147,7 +146,7 @@ const Sidebar = () => {
 
       {/* FOOTER */}
       <div className={`${isSidebarCollapsed ? "hidden" : "block"} mb-10`}>
-        <p className="text-center text-xs text-gray-500">&copy; 2024 Inven</p>
+        <p className="text-center text-xs text-gray-500">&copy; 2024 InvenCT</p>
       </div>
     </div>
   );

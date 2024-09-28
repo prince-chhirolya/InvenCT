@@ -1,11 +1,10 @@
 import type { Config } from "tailwindcss";
 import { createThemes } from "tw-colors";
 import colors from "tailwindcss/colors";
-import { createTheme } from "@mui/system";
 
 const baseColors = [
   "gray",
-  "red",  
+  "red",
   "yellow",
   "green",
   "blue",
@@ -27,20 +26,20 @@ const shadeMapping = {
   "900": "50",
 };
 
-const generateThemeObjecct = (colors: any, mapping: any, invert = false) => {
+const generateThemeObject = (colors: any, mapping: any, invert = false) => {
   const theme: any = {};
   baseColors.forEach((color) => {
     theme[color] = {};
     Object.entries(mapping).forEach(([key, value]: any) => {
       const shadeKey = invert ? value : key;
       theme[color][key] = colors[color][shadeKey];
-   });
+    });
   });
   return theme;
 };
 
-const lightTheme = generateThemeObjecct(colors, shadeMapping);
-const darkTheme = generateThemeObjecct(colors, shadeMapping, true);
+const lightTheme = generateThemeObject(colors, shadeMapping);
+const darkTheme = generateThemeObject(colors, shadeMapping, true);
 
 const themes = {
   light: {
@@ -54,7 +53,6 @@ const themes = {
   },
 };
 
-
 const config: Config = {
   darkMode: "class",
   content: [
@@ -62,7 +60,6 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  
   theme: {
     extend: {
       backgroundImage: {
@@ -72,7 +69,6 @@ const config: Config = {
       },
     },
   },
-
   plugins: [createThemes(themes)],
 };
 

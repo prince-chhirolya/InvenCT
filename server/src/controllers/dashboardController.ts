@@ -44,7 +44,7 @@ export const getDashboardMetrics = async (
       (item) => ({
         ...item,
         amount: item.amount.toString(),
-      }) 
+      })
     );
 
     res.json({
